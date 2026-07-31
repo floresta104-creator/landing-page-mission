@@ -1,0 +1,150 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  color: var(--deep-indigo);
+  background: #0a0d18;
+  overflow: hidden;
+}
+
+/* Landing needs document scroll; game keeps overflow locked */
+html.on-landing,
+html.on-landing body,
+html.on-landing #root {
+  height: auto;
+  min-height: 100%;
+}
+
+html.on-landing body {
+  overflow: auto;
+  overflow-x: hidden;
+  background: #12101c;
+  color: #241e3a;
+}
+
+.back-to-landing {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 100;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: rgba(12, 16, 40, 0.78);
+  color: #f7f4ee;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.back-to-landing:hover {
+  background: rgba(12, 16, 40, 0.92);
+  transform: translateY(-1px);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--orb-violet);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-3);
+  z-index: 1000;
+  padding: var(--space-2) var(--space-3);
+  background: var(--deep-indigo);
+  color: var(--moon-ivory);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.skip-link:focus {
+  top: var(--space-3);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.btn-primary,
+.btn-secondary {
+  min-height: 44px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--orb-violet);
+  color: #fff;
+  font-weight: 600;
+  transition: background var(--transition-medium), transform var(--transition-medium);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  background: var(--glow-violet);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--deep-indigo);
+  border: 1px solid rgba(29, 35, 64, 0.2);
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.brand-lockup__mark {
+  width: 40px;
+  height: 50px;
+}
+
+.brand-lockup__name {
+  font-family: var(--font-brand);
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

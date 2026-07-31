@@ -1,0 +1,365 @@
+.ox {
+  position: relative;
+  height: 100dvh;
+  overflow: hidden;
+  background: #0a0d18;
+  font-family: var(--font-ui);
+  color: var(--deep-indigo);
+}
+
+.ox-boot {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 12px;
+  color: #f7f4ee;
+}
+
+.ox-boot img {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 0 18px rgba(142, 121, 242, 0.5));
+}
+
+.ox-boot p {
+  margin: 0;
+  font-family: var(--font-brand);
+  letter-spacing: 0.08em;
+}
+
+.ox-boot-bar {
+  width: 160px;
+  height: 2px;
+  margin-top: 8px;
+  background: rgba(247, 244, 238, 0.15);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.ox-boot-bar i {
+  display: block;
+  height: 100%;
+  background: #6e59d9;
+  transition: width 0.25s ease;
+}
+
+.ox-scene {
+  position: absolute;
+  inset: 0;
+}
+
+.ox-scene > img,
+.ox-plate {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+  pointer-events: none;
+}
+
+.ox-door-scene {
+  animation: ox-fade 0.6s ease both;
+}
+
+.ox-door-copy {
+  position: absolute;
+  left: 50%;
+  bottom: 7vh;
+  z-index: 3;
+  transform: translateX(-50%);
+  width: min(520px, 92vw);
+  text-align: center;
+  color: #f7f4ee;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+.ox-door-copy p {
+  margin: 0 0 8px;
+  font-family: var(--font-brand);
+  letter-spacing: 0.12em;
+  color: #e8d9b0;
+}
+
+.ox-door-copy h1 {
+  margin: 0 0 18px;
+  font-family: var(--font-brand);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-weight: 600;
+}
+
+.ox-door-copy button,
+.ox-save {
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 24px;
+  background: linear-gradient(180deg, #8570ea, #6e59d9);
+  color: #fff;
+  box-shadow: 0 14px 34px rgba(110, 89, 217, 0.4);
+}
+
+.ox-door-hit {
+  position: absolute;
+  left: 37%;
+  top: 16%;
+  width: 26%;
+  height: 60%;
+  border: 0;
+  border-radius: 50% 50% 40% 40%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.ox-door-hit:hover,
+.ox-door-hit:focus-visible {
+  box-shadow: inset 0 0 0 2px rgba(232, 217, 176, 0.55);
+}
+
+.ox-room > img {
+  transform-origin: 42% 55%;
+}
+
+.ox-room.is-away > img {
+  filter: brightness(0.55);
+}
+
+.ox-hot {
+  position: absolute;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 14px;
+}
+
+.ox-hot.is-main {
+  box-shadow: inset 0 0 0 0 rgba(142, 121, 242, 0);
+  animation: ox-pulse-outline 2.2s ease-in-out infinite;
+}
+
+.ox-hot:hover,
+.ox-hot:focus-visible {
+  background: rgba(142, 121, 242, 0.12);
+  box-shadow: inset 0 0 0 2px rgba(142, 121, 242, 0.55);
+}
+
+.ox-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  animation: ox-fade 0.45s ease both;
+}
+
+.ox-laptop-view .ox-plate {
+  filter: brightness(0.55);
+}
+
+.ox-panel {
+  position: absolute;
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(420px, 92vw);
+  max-height: min(84vh, 760px);
+  overflow: auto;
+  padding: 20px;
+  border-radius: 22px;
+  background: rgba(247, 244, 238, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+  animation: ox-slide 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.ox-panel header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.ox-panel h2 {
+  margin: 0;
+  flex: 1;
+  font-family: var(--font-brand);
+  font-size: 1.25rem;
+}
+
+.ox-help {
+  margin: 0 0 14px;
+  opacity: 0.75;
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+.ox-choices {
+  display: grid;
+  gap: 8px;
+}
+
+.ox-choices button,
+.ox-back {
+  border: 1px solid rgba(29, 35, 64, 0.12);
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 14px;
+  padding: 12px 14px;
+  text-align: left;
+}
+
+.ox-choices button.on,
+.ox-choices button:hover,
+.ox-choices button:focus-visible {
+  border-color: #6e59d9;
+  box-shadow: 0 8px 22px rgba(110, 89, 217, 0.16);
+}
+
+.ox-back {
+  text-align: center;
+  background: transparent;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+}
+
+.ox-struct {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(29, 35, 64, 0.08);
+  animation: ox-fade 0.35s ease both;
+}
+
+.ox-struct h3 {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+}
+
+.ox-struct dl {
+  margin: 0 0 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.ox-struct dl > div {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.ox-struct dt {
+  opacity: 0.55;
+}
+
+.ox-struct dd {
+  margin: 0;
+}
+
+.ox-saved-msg,
+.ox-cta-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.ox-saved .ox-plate {
+  filter: brightness(0.7);
+}
+
+.ox-saved-msg {
+  margin: 0;
+  padding: 16px 22px;
+  border-radius: 18px;
+  background: rgba(247, 244, 238, 0.95);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  font-family: var(--font-brand);
+  font-size: 1.15rem;
+}
+
+.ox-cta .ox-plate {
+  filter: brightness(0.4);
+}
+
+.ox-cta-card {
+  width: min(440px, 92vw);
+  padding: 28px 24px;
+  border-radius: 24px;
+  background: rgba(247, 244, 238, 0.96);
+  text-align: center;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+}
+
+.ox-cta-card h2 {
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  line-height: 1.35;
+}
+
+.ox-note {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  z-index: 30;
+  transform: translateX(-50%);
+  max-width: min(480px, 92vw);
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: rgba(247, 244, 238, 0.96);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes ox-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ox-slide {
+  from {
+    opacity: 0;
+    transform: translate(24px, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+}
+
+@keyframes ox-pulse-outline {
+  0%,
+  100% {
+    box-shadow: inset 0 0 0 2px rgba(142, 121, 242, 0.25);
+  }
+  50% {
+    box-shadow: inset 0 0 0 2px rgba(142, 121, 242, 0.85), 0 0 24px rgba(142, 121, 242, 0.35);
+  }
+}
+
+@media (max-width: 860px) {
+  .ox-panel {
+    right: 50%;
+    top: auto;
+    bottom: 12px;
+    transform: translateX(50%);
+    width: min(520px, 94vw);
+    max-height: 58vh;
+    animation-name: ox-fade;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ox *,
+  .ox *::before,
+  .ox *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
