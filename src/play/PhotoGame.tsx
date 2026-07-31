@@ -1077,8 +1077,8 @@ export function PhotoGame() {
                     <div className="glass-panel g-detail-card">
                       <h2>Inner Shield</h2>
                       <p className="lead">
-                        {arrival
-                          ? `${arrival.title}으로 들어온 밤의 자기보호 결을 짧게 적어둡니다.`
+                        {arrival?.title
+                          ? `${arrival?.title}으로 들어온 밤의 자기보호 결을 짧게 적어둡니다.`
                           : '자기보호의 결을 짧게 적어둡니다.'}
                       </p>
                       <ul>
