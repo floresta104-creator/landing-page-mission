@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" fill="none">
+  <defs>
+    <linearGradient id="stone" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff8ef"/>
+      <stop offset="35%" stop-color="#ebe1d2"/>
+      <stop offset="70%" stop-color="#d2c4b0"/>
+      <stop offset="100%" stop-color="#b9a894"/>
+    </linearGradient>
+    <linearGradient id="stoneDeep" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7f0e6"/>
+      <stop offset="100%" stop-color="#a89884"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f6e3b0"/>
+      <stop offset="45%" stop-color="#d4b56a"/>
+      <stop offset="100%" stop-color="#9a7a3a"/>
+    </linearGradient>
+    <linearGradient id="goldShine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff6d2" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#d4b56a" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.2" flood-color="#2a2438" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- outer stone arch body -->
+  <path
+    d="M14 278V88C14 32 58 4 100 4C142 4 186 32 186 88V278Z"
+    fill="url(#stoneDeep)"
+    opacity="0.22"
+  />
+  <path
+    d="M16 278V90C16 36 60 8 100 8C140 8 184 36 184 90V278"
+    stroke="url(#stone)"
+    stroke-width="16"
+    stroke-linecap="round"
+    fill="none"
+    filter="url(#soft)"
+  />
+  <!-- mid molding -->
+  <path
+    d="M26 274V94C26 46 64 20 100 20C136 20 174 46 174 94V274"
+    stroke="#fffaf2"
+    stroke-width="2.2"
+    fill="none"
+    opacity="0.55"
+  />
+  <!-- inner purple-kissed edge -->
+  <path
+    d="M32 272V96C32 52 68 26 100 26C132 26 168 52 168 96V272"
+    stroke="url(#goldShine)"
+    stroke-width="1.6"
+    fill="none"
+    opacity="0.9"
+  />
+  <!-- panel grooves -->
+  <path d="M48 110V250" stroke="#c4b49e" stroke-width="1" opacity="0.35"/>
+  <path d="M152 110V250" stroke="#c4b49e" stroke-width="1" opacity="0.35"/>
+  <path d="M58 180H142" stroke="#c4b49e" stroke-width="1" opacity="0.28"/>
+
+  <!-- hinges -->
+  <rect x="28" y="118" width="7" height="16" rx="2" fill="url(#gold)"/>
+  <rect x="28" y="198" width="7" height="16" rx="2" fill="url(#gold)"/>
+  <rect x="29.5" y="121" width="4" height="3" rx="1" fill="#fff1c4" opacity="0.7"/>
+  <rect x="29.5" y="201" width="4" height="3" rx="1" fill="#fff1c4" opacity="0.7"/>
+
+  <!-- handle plate -->
+  <rect x="138" y="152" width="18" height="34" rx="5" fill="url(#stone)" opacity="0.85"/>
+  <rect x="140" y="155" width="14" height="28" rx="4" stroke="#d4b56a" stroke-width="1" fill="none" opacity="0.7"/>
+  <!-- handle -->
+  <ellipse cx="149" cy="168" rx="5.5" ry="5.5" fill="url(#gold)"/>
+  <ellipse cx="147.5" cy="166.5" rx="2" ry="2" fill="#fff6d2" opacity="0.75"/>
+  <rect x="147" y="172" width="4" height="10" rx="2" fill="url(#gold)"/>
+
+  <!-- keyhole -->
+  <circle cx="149" cy="186" r="1.6" fill="#6a5530"/>
+  <path d="M149 187.2V191.5" stroke="#6a5530" stroke-width="1.3" stroke-linecap="round"/>
+
+  <!-- threshold sill -->
+  <rect x="10" y="266" width="180" height="12" rx="3" fill="url(#stoneDeep)"/>
+  <rect x="16" y="268" width="168" height="3.5" rx="1.5" fill="#fff8ef" opacity="0.55"/>
+  <rect x="22" y="273" width="156" height="2" rx="1" fill="#9a8870" opacity="0.35"/>
+
+  <!-- crown jewel -->
+  <circle cx="100" cy="28" r="4" fill="url(#gold)"/>
+  <circle cx="99" cy="27" r="1.4" fill="#fff6d2" opacity="0.8"/>
+</svg>
